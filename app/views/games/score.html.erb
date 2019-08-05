@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<% if @valid && @in_the_grid %>
+  <p>Congratulation! <%= @word.upcase %> is a valid English word!</p>
+<% elsif @valid == false %>
+  <p>NO! <%= @word.upcase %> is not an english word!</p>
+<% elsif @in_the_grid == false%>
+  <p>NEIN ! NEIN ! NEIN ! <%= @word.upcase %> can't be made out of <%= @letters %> !</p>
+
+<% end %>
+
+
+<%= link_to "Play again", "/new" %>

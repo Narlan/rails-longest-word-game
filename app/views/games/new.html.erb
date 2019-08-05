@@ -1,0 +1,15 @@
+<div class="letters">
+  <% @letters_list.each do |letter| %>
+      <div class="letter"> <p> <%= letter %> </p> </div>
+  <% end %>
+</div>
+<% @letters_list = @letters_list.join %>
+<p><%= @letters_list %></p>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="word">What is the longest word you can find?</label>
+  <input id="letters_list" name="letters_list" type="hidden" value="<%= @letters_list %>" />
+  <input id="word" type="text" name="word">
+  <input type="submit" value="send">
+</form>
