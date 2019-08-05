@@ -1,7 +1,7 @@
 <h1>Result</h1>
 
 <% if @valid && @in_the_grid %>
-  <p>Congratulation! <%= @word.upcase %> is a valid English word!</p>
+  <p>Congratulation! <%= @word.upcase %> is a valid English word! SCORE : <%= @score %></p>
 <% elsif @valid == false %>
   <p>NO! <%= @word.upcase %> is not an english word!</p>
 <% elsif @in_the_grid == false%>

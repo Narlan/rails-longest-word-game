@@ -23,6 +23,7 @@ class GamesController < ApplicationController
 
     @word = params[:word].upcase
     @letters = params[:letters_list].split('')
+    @score = @word.length
 
     url = "https://wagon-dictionary.herokuapp.com/#{@word}"
     @answer = open(url).read
